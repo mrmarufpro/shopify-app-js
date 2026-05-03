@@ -1,5 +1,28 @@
 # Changelog
 
+## 7.1.0
+
+### Minor Changes
+
+- ceb998b: Add token exchange authentication strategy and hooks support
+  - Add `future` config option with feature flags (`unstable_newEmbeddedAuthStrategy`, `expiringOfflineAccessTokens`) to opt into upcoming behaviour changes
+  - Add `unstable_newEmbeddedAuthStrategy` flag: when enabled, `validateAuthenticatedSession` exchanges session tokens directly instead of redirecting to OAuth, and `ensureInstalledOnShop` skips the session check for embedded apps
+  - Add `hooks.afterAuth` async callback invoked after both OAuth and token exchange flows (deduplicated across concurrent requests)
+  - Add `registerWebhooks({session})` convenience method on the `ShopifyApp` object
+  - Add `expiringOfflineAccessTokens` flag to enable expiring offline access tokens in OAuth and token exchange flows
+  - Add `ensureOfflineTokenIsNotExpired` helper to proactively refresh offline tokens nearing expiry
+
+### Patch Changes
+
+- ea80610: Updated webhook documentation to steer developers toward app-specific subscriptions and clearly label shop-specific APIs.
+- Updated dependencies [9264a64]
+- Updated dependencies [e510582]
+- Updated dependencies [e4db082]
+- Updated dependencies [7ec655a]
+  - @shopify/shopify-api@13.1.0
+  - @shopify/shopify-app-session-storage@5.0.1
+  - @shopify/shopify-app-session-storage-memory@6.0.1
+
 ## 7.0.0
 
 ### Major Changes
