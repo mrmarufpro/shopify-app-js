@@ -1,6 +1,6 @@
 {
   "name": "@shopify/shopify-app-express",
-  "version": "7.0.1",
+  "version": "7.1.0",
   "description": "Shopify Express Middleware - to simplify the building of Shopify Apps with Express",
   "engines": {
     "node": ">=20.0.0"
